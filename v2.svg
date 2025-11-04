@@ -21,8 +21,8 @@
 
     <!-- Description de l'image -->
     <desc>
-        Étape 1 du TP3.2: fond bleu pour le ciel, bande verte pour le sol,
-        bloc gris pour le bâtiment du CERI et un texte de titre.
+        Étape 2 du TP3.2: ajout de fenêtres au bâtiment, d'un texte de contexte,
+        et d'une ligne décorative sur le sol.
     </desc>
 
     <!-- Rectangle pour le fond pour le ciel (forme 1) -->
