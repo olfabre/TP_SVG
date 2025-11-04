@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Étape 1: base de la scène CERI avec un ciel, le sol, le bâtiment du CERI et un titre -->
+
+<!-- Élément racine du document SVG -->
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="800"
+    height="600"
+    viewBox="0 0 800 600"
+    version="1.1">
+
+    <!-- Métadonnées complètes -->
+    <metadata>
+        { "title": "CERI - Université d'Avignon - Étudiant Olivier Fabre",
+          "description": "Scène SVG animée: bâtiment du CERI, étudiant Olivier Fabre, nuage animé, fenêtre clignotante et texte CERI changeant de couleur.",
+          "author": "Olivier Fabre",
+          "institution": "Université d'Avignon - CERI",
+          "keywords": ["SVG","CERI","Université d'Avignon","Olivier Fabre","animation"] }
+    </metadata>
+
+    <!-- Titre du document -->
+    <title>CERI Université d&apos;Avignon</title>
+
+    <!-- Description de l'image -->
+    <desc>
+        Étape 4 du TP3.2: bâtiment du CERI avec gradients, animations sur un nuage,
+        une fenêtre de salle de TP et le texte CERI. Étudiant Olivier Fabre avec ordinateur
+        devant le bâtiment.
+    </desc>
+
+<!-- Début des définitions (dégradés, etc.) -->
+    <defs>
+        <!-- Dégradé linéaire vertical pour mon ciel -->
+        <linearGradient id="gradCiel" x1="0%" y1="0%" x2="0%" y2="100%">
+            <!-- Couleur en haut du ciel -->
+            <stop offset="0%" stop-color="#9AD3FF" />
+            <!-- Couleur en bas du ciel -->
+            <stop offset="100%" stop-color="#3877C3" />
+        </linearGradient>
+
+        <!-- Dégradé linéaire horizontal pour la façade du CERIt -->
+        <linearGradient id="gradBatiment" x1="0%" y1="0%" x2="100%" y2="0%">
+            <!-- Bord gauche -->
+            <stop offset="0%" stop-color="#F0F0F0" />
+            <!-- Bord droit -->
+            <stop offset="100%" stop-color="#D0D0D0" />
+        </linearGradient>
+
+        <!-- Dégradé radial pour le disque soleil -->
+        <radialGradient id="gradSoleil" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFAA" />
+            <stop offset="100%" stop-color="#FFC300" />
+        </radialGradient>
+    </defs>
+
+
+
+    <!-- Rectangle pour le fond pour le ciel (forme 1) -->
+   <rect
+        x="0" y="0"
+        width="800" height="400"
+        fill="url(#gradCiel)" />
+
+    <!-- Rectangle de fond pour le sol (forme 2) -->
+    <rect
+        x="0" y="400"
+        width="800" height="200"
+        fill="#228B22" />
+
+<!-- Disque soleil (forme 3) -->
+    <circle
+        cx="90" cy="110" r="40"
+        fill="url(#gradSoleil)"
+        stroke="#FFB000"
+        stroke-width="2"
+        opacity="0.95" />
+
+
+    <!-- Rectangle principal du bâtiment du CERI (forme 3) -->
+    <rect
+        x="150" y="220"
+        width="350" height="160"
+        fill="url(#gradBatiment)"
+        stroke="#555555"
+        stroke-width="2" />
+
+    <!-- Porte principale du bâtiment (forme 4) -->
+    <rect
+        x="300" y="300"
+        width="50" height="80"
+        fill="#444444"
+        stroke="#222222"
+        stroke-width="2" />
+
+    <!-- Petite dalle devant la porte (forme 5) -->
+    <rect
+        x="285" y="380"
+        width="80" height="20"
+        fill="#999999"
+        opacity="0.85" />
+
+
+    <!-- Première fenêtre (forme 6) -->
+    <rect
+        x="180" y="240"
+        width="60" height="40"
+        fill="#ADD8E6"
+        stroke="#444444"
+        stroke-width="1" />
+
+    <!-- Deuxième fenêtre (forme 7) -->
+    <rect
+        x="260" y="240"
+        width="60" height="40"
+        fill="#ADD8E6"
+        stroke="#444444"
+        stroke-width="1" />
+
+    <!-- Troisième fenêtre (forme 8) -->
+    <rect
+        x="340" y="240"
+        width="60" height="40"
+        fill="#ADD8E6"
+        stroke="#444444"
+        stroke-width="1" />
+
+    <!-- Quatrième fenêtre (forme 9) -->
+    <rect
+        x="420" y="240"
+        width="60" height="40"
+        fill="#ADD8E6"
+        stroke="#444444"
+        stroke-width="1" />
+
+<!-- Fenêtre de notre salle de TP animée (forme 10) -->
+    <rect
+        id="fenetreTp"
+        x="420" y="240"
+        width="60" height="40"
+        fill="#B0E0E6"
+        stroke="#444444"
+        stroke-width="1">
+        <!-- Animation: clignotement d'opacité de la fenêtre de TP -->
+        <animate
+            attributeName="opacity"
+            from="1" to="0.2"
+            dur="2s"
+            repeatCount="indefinite" />
+    </rect>
+
+
+
+
+    <!-- Titre principal : Université d'Avignon (texte 1) -->
+    <text
+        x="400" y="70"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="28"
+        fill="#FFFFFF"
+        stroke="#000000"
+        stroke-width="0.5">
+        Université d&apos;Avignon
+    </text>
+
+    <!-- Sous-titre : CERI (texte 2) -->
+    <text
+        id="texteCeri"
+        x="400" y="95"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="24"
+        fill="#FFD700">
+        CERI - Centre d&apos;Enseignement et de Recherche en Informatique
+    </text>
+
+    <!-- Texte de contexte (texte 3) -->
+    <text
+        x="400" y="125"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="14"
+        fill="#F0F8FF">
+        Informatique, innovation, génie logiciel et systèmes d&apos;information
+    </text>
+
+
+     <!-- Animation: changement de couleur du texte CERI -->
+    <animate
+        xlink:href="#texteCeri"
+        attributeName="fill"
+        values="#FFD700;#FFFFFF;#FFD700"
+        dur="4s"
+        repeatCount="indefinite" />
+
+    <!-- Texte année universitaire (texte 4) -->
+    <text
+        x="400" y="145"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="13"
+        fill="#E0E0E0">
+        Année universitaire 2025 - Campus Jean-Henri Fabre
+    </text>
+
+
+    <!-- Ligne de décoration sur le sol (forme 10) -->
+    <line
+        x1="10" y1="570"
+        x2="790" y2="570"
+        stroke="#BBBBBB"
+        stroke-width="1"
+        stroke-dasharray="4 2" />
+
+
+<!-- Nuage dans le ciel (forme 12, path) -->
+    <path
+        id="nuage"
+        d="M600 80
+           Q620 60 650 70
+           Q670 50 700 70
+           Q730 70 730 90
+           Q720 110 690 105
+           Q660 120 630 105
+           Q600 110 590 95
+           Q580 85 600 80 Z"
+        fill="#FFFFFF"
+        opacity="0.9" />
+
+ <!-- Animation: translation (deplacement) du nuage -->
+    <animateTransform
+        xlink:href="#nuage"
+        attributeName="transform"
+        type="translate"
+        from="0 0" to="-120 0"
+        dur="10s"
+        repeatCount="indefinite" />
+
+
+
+
+<!-- Groupe pour le dessin de l'étudiant Olivier Fabre -->
+    <g id="etudiantOlivier">
+
+        <!-- ma tête (cercle, forme 11) -->
+        <circle
+            cx="620" cy="320" r="25"
+            fill="#F1C27D"
+            stroke="#8B5A2B"
+            stroke-width="2" />
+
+        <!-- mon corps (rectangle, forme 12) -->
+        <rect
+            x="600" y="345"
+            width="40" height="70"
+            fill="#1E90FF"
+            stroke="#000080"
+            stroke-width="2" />
+
+        <!-- mon bras gauche (ligne, forme 13) -->
+        <line
+            x1="600" y1="355"
+            x2="575" y2="380"
+            stroke="#1E90FF"
+            stroke-width="6"
+            stroke-linecap="round" />
+
+        <!-- mon bras droit (ligne) -->
+        <line
+            x1="640" y1="355"
+            x2="665" y2="380"
+            stroke="#1E90FF"
+            stroke-width="6"
+            stroke-linecap="round" />
+
+        <!-- ma jambe gauche (ligne) -->
+        <line
+            x1="610" y1="415"
+            x2="600" y2="455"
+            stroke="#000000"
+            stroke-width="5"
+            stroke-linecap="round" />
+
+        <!-- ma jambe droite (ligne) -->
+        <line
+            x1="630" y1="415"
+            x2="640" y2="455"
+            stroke="#000000"
+            stroke-width="5"
+            stroke-linecap="round" />
+
+        <!-- ma bouche (petit arc) -->
+        <path
+            d="M610 325 Q620 335 630 325"
+            fill="none"
+            stroke="#8B4513"
+            stroke-width="2" />
+    </g>
+
+
+    <!-- Animation: léger mouvement vertical de l'étudiant -->
+    <animateTransform
+        xlink:href="#etudiantOlivier"
+        attributeName="transform"
+        type="translate"
+        from="0 0" to="0 -5"
+        dur="2s"
+        repeatCount="indefinite"
+        additive="sum" />
+
+<!-- mon ordinateur portable posé à côté de moi (forme 14) -->
+    <rect
+        x="560" y="410"
+        width="60" height="40"
+        fill="#333333"
+        stroke="#111111"
+        stroke-width="2" />
+
+    <!-- l'écran de l'ordinateur (forme 15) -->
+    <rect
+        x="565" y="415"
+        width="50" height="25"
+        fill="#000000" />
+
+    <!-- Texte sur l'écran: "code" (texte 4) -->
+    <text
+        x="590" y="430"
+        text-anchor="middle"
+        font-family="Courier New, monospace"
+        font-size="10"
+        fill="#00FF00">
+        &lt;code/&gt;
+    </text>
+
+    <!-- Nom Olivier Fabre (texte 5) -->
+    <text
+        x="620" y="480"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="14"
+        fill="#FFFFFF">
+        Olivier Fabre
+    </text>
+
+    <!-- Formation de l'étudiant (texte 6) -->
+    <text
+        x="620" y="500"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="12"
+        fill="#E0FFFF">
+        Master Informatique - Génie Logiciel
+    </text>
+
+    <!-- Texte de bas de page (texte 7) -->
+    <text
+        x="20" y="585"
+        font-family="Arial, sans-serif"
+        font-size="11"
+        fill="#DDDDDD">
+        Version finale SVG animée pour le TP
+    </text>
+
+
+
+
+
+</svg>
